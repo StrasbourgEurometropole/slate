@@ -249,10 +249,6 @@
 <h2 id="tous-les-v-nements">Tous les événements</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://strasbourg.eu/api/jsonws/agenda.event/get-events"</span>
   -H <span class="s2">"Authorization: KEY"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
@@ -344,7 +340,11 @@
 
 <p><em>Aucun</em></p>
 
-<h2 id="un-v-nement-sp-cifique">Un événement spécifique</h2>
+<h3 id="description-des-champs">Description des champs</h3>
+
+<p><em>TODO</em></p>
+
+<h2 id="ev-nement-sp-cifique">Evénement spécifique</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/2"</span>
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
@@ -358,9 +358,70 @@
 </span></code></pre>
 <p>Ce endpoint renvoie un événement spécifique.</p>
 
+<h2 id="liste-des-v-nements-par-date">Liste des événements par date</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/01102018"</span>
+  -H <span class="s2">"Authorization: KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des événements qui se déroulent un jour donné.</p>
+
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/&lt;DATE&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DATE</td>
+<td>Date au format ddMMyyyy (exemple : 1er octobre 2018 devient 01102018)</td>
+</tr>
+</tbody></table>
+
+<h2 id="liste-des-v-nements-par-cat-gorie">Liste des événements par catégorie</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/125"</span>
+  -H <span class="s2">"Authorization: KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des événements qui possèdent une catégorie donnée.</p>
+
+<aside class="notice">
+  Les catégories peuvent être des types, des thèmes, des publics ou des territoires. 
+  Référez-vous à la documentation concernant les catégories pour savoir comment connaître ces différentes catégories et leurs identifiants.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/&lt;ID&gt;</code></p>
 
 <h3 id="param-tres">Paramètres</h3>
 
@@ -372,9 +433,255 @@
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>L&#39;identifiant de l&#39;événement à renvoyer</td>
+<td>Identifiant de la catégorie</td>
 </tr>
 </tbody></table>
+
+<h2 id="liste-des-v-nements-par-lieu">Liste des événements par lieu</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/125"</span>
+  -H <span class="s2">"Authorization: KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des événements qui se déroulent dans le lieu passé en paramètre.</p>
+
+<aside class="notice">
+  Afin de connaître les différents lieux existant et de récupérer leurs identifiants, référez-vous à la documentation concernant les lieux.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/&lt;ID&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Identifiant du lieu</td>
+</tr>
+</tbody></table>
+
+<h2 id="liste-des-v-nements-par-langue">Liste des événements par langue</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/language/fr_FR"</span>
+  -H <span class="s2">"Authorization: KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des événements qui possèdent une traduction dans la langue donnée.</p>
+
+<aside class="notice">
+  Sur Strasbourg.eu, les lieux peuvent être dispoonbiles en Français (&ldquo;fr_FR&rdquo;), anglais (&ldquo;en_US&rdquo;) et/ou allemand (&ldquo;de_DE&rdquo;).
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/language/&lt;LANGUAGE&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>LANGUAGE</td>
+<td>Langue : &ldquo;fr_FR&rdquo; pour le français, &ldquo;en_US&rdquo; pour l&#39;anglais, &ldquo;de_DE&rdquo; pour l&#39;allemand</td>
+</tr>
+</tbody></table>
+
+<h1 id="cat-gories">Catégories</h1>
+
+<h2 id="liste-des-publics">Liste des publics</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics
+  -H "</span>Authorization: KEY<span class="s2">"
+</span></code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">    
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moins de 14 ans"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Under 14 years old"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"De 14 à 18 ans"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From 14 to 18 years old"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des types de publics susceptibles d&#39;assister à un événement.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics</code></p>
+
+<h2 id="liste-des-th-mes-des-v-nements">Liste des thèmes des événements</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes
+  -H "</span>Authorization: KEY<span class="s2">"
+</span></code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">    
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eté"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Summer"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Noël"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Christmas"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Noël des enfants"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Christmas for kids"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des thèmes des événements.</p>
+
+<aside class="notice">Un thème peut avoir un thème parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parnetId&rdquo;</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes</code></p>
+
+<h2 id="liste-des-types-d-v-nements">Liste des types d&#39;événements</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-types
+  -H "</span>Authorization: KEY<span class="s2">"
+</span></code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">    
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concert"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Concert"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exposition"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exhibition"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exposition d'art contemporain"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Modern art exhibition"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des types d&#39;événements.</p>
+
+<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parnetId&rdquo;</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-types</code></p>
+
+<h2 id="liste-des-territoires">Liste des territoires</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
+  -H "</span>Authorization: KEY<span class="s2">"
+</span></code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">    
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allemagne"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Germany"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strasbourg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strasbourg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centre"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"City center"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des territoires pouvant être référencés par d&#39;autres entités, comme les événements où les lieux.</p>
+
+<aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parnetId&rdquo;</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories</code></p>
 
       </div>
       <div class="dark-box">
