@@ -200,7 +200,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,7 +211,6 @@
       <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -220,8 +219,8 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.strasbourg.eu'>Strasbourg.eu</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation générée par Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -244,10 +243,10 @@
 <li><p>Ajoutez &lsquo;username:password@&rsquo; devant chaque URL des endpoints de l&#39;API (<code class="prettyprint">https://www.strasbourg.eu/api/...</code> devient <code class="prettyprint">https://username:password@www.strasbourg.eu/api...</code>)</p></li>
 </ul>
 
-<h1 id="ev-nements">Evénements</h1>
+          <h1 id="ev-nements">Evénements</h1>
 
 <h2 id="tous-les-v-nements">Tous les événements</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://strasbourg.eu/api/jsonws/agenda.event/get-events"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events"</span>
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
 <blockquote>
@@ -519,7 +518,7 @@
 </tr>
 </tbody></table>
 
-<h1 id="cat-gories">Catégories</h1>
+          <h1 id="cat-gories">Catégories</h1>
 
 <h2 id="liste-des-publics">Liste des publics</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics
@@ -586,7 +585,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des thèmes des événements.</p>
 
-<aside class="notice">Un thème peut avoir un thème parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parnetId&rdquo;</aside>
+<aside class="notice">Un thème peut avoir un thème parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;</aside>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -627,7 +626,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des types d&#39;événements.</p>
 
-<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parnetId&rdquo;</aside>
+<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;</aside>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -677,7 +676,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des territoires pouvant être référencés par d&#39;autres entités, comme les événements où les lieux.</p>
 
-<aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parnetId&rdquo;</aside>
+<aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;</aside>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -687,7 +686,6 @@
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
