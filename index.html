@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Strasbourg.eu - Référence de l'API</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -200,7 +200,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,8 +211,6 @@
       <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
@@ -231,149 +229,142 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
+<p>Bienvenue sur la documentation des APIs de Strasbourg.eu. Ces APIs vous permettront d&#39;accéder à différentes données de Strasbourg.eu comme les événements et les lieux de la ville de Strasbourg.</p>
 
 <h1 id="authentication">Authentication</h1>
 
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>L&#39;accès à l&#39;API est protégé par une authentification HTTP. Vous devez posséder un compte utilisateur sur Strasbourg.eu pour y accéder.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Deux méthodes sont possibles pour utiliser l&#39;API :</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<ul>
+<li><p>Ajoutez le header HTTP suivant à chacune de vos requêtes, où la key est la valeur en base 64 de la chaine de caractères &lsquo;username:password&rsquo; : <code class="prettyprint">Authorization: KEY</code>, vous pouvez utiliser un encodeur en ligne comme <a href="celui-ci">http://www.motobit.com/util/base64-decoder-encoder.asp</a> pour effectuer l&#39;encodage</p></li>
+<li><p>Ajoutez &lsquo;username:password@&rsquo; devant chaque URL des endpoints de l&#39;API (<code class="prettyprint">https://www.strasbourg.eu/api/...</code> devient <code class="prettyprint">https://username:password@www.strasbourg.eu/api...</code>)</p></li>
+</ul>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<h1 id="ev-nements">Evénements</h1>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-<h1 id="kittens">Kittens</h1>
-
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<h2 id="tous-les-v-nements">Tous les événements</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://strasbourg.eu/api/jsonws/agenda.event/get-events"</span>
+  -H <span class="s2">"Authorization: KEY"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"event_1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Titre de l'événement"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event title"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sous-titre de l'événement"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event subtitle"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Description de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event description&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://URL_DE_L_ILLUSTRATION"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timeDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"De 16 à 18h"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From 4 to 6pm"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"place"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lieu où l'événement à lieu"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event place name"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Numéro de la rue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la rue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code postal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ville"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event access details&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"accessForDisabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement pour les personnes handicapées&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access details for disabled people&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"freeEntry"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Tarifs de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event price&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"83504"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"themes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"126203"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"territories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"83503"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"83503"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"83504"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"126203"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"eventURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.strasbourg.eu/-/entity/id/000001"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000002"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>Ce endpoint renvoie l&#39;ensemble des événements qui ont lieu dans l&#39;Eurométropole de Strasbourg.</p>
 
-<h3 id="http-request">HTTP Request</h3>
+<h3 id="requ-te-http">Requête HTTP</h3>
 
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
+<h3 id="param-tres">Paramètres</h3>
 
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p><em>Aucun</em></p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<h2 id="un-v-nement-sp-cifique">Un événement spécifique</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/2"</span>
+  -H <span class="s2">"Authorization: KEY"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>La structure JSON renvoyée est la suivante</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>Ce endpoint renvoie un événement spécifique.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/&lt;ID&gt;</code></p>
 
-<h3 id="url-parameters">URL Parameters</h3>
+<h3 id="param-tres">Paramètres</h3>
 
 <table><thead>
 <tr>
@@ -383,7 +374,7 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>L&#39;identifiant de l&#39;événement à renvoyer</td>
 </tr>
 </tbody></table>
 
@@ -449,8 +440,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
