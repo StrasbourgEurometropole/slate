@@ -1,10 +1,8 @@
 ---
-title: API Reference
+title: Strasbourg.eu - Référence de l'API
 
 language_tabs:
   - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
@@ -19,73 +17,27 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Bienvenue sur la documentation des APIs de Strasbourg.eu. Ces APIs vous permettront d'accéder à différentes données de Strasbourg.eu comme les événements et les lieux de la ville de Strasbourg.
 
 # Authentication
 
-> To authorize, use this code:
+L'accès à l'API est protégé par une authentification HTTP. Vous devez posséder un compte utilisateur sur Strasbourg.eu pour y accéder.
 
-```ruby
-require 'kittn'
+Deux méthodes sont possibles pour utiliser l'API :
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+* Ajoutez le header HTTP suivant à chacune de vos requêtes, où la key est la valeur en base 64 de la chaine de caractères 'username:password' : `Authorization: KEY`, vous pouvez utiliser un encodeur en ligne comme [http://www.motobit.com/util/base64-decoder-encoder.asp](celui-ci) pour effectuer l'encodage
 
-```python
-import kittn
+* Ajoutez 'username:password@' devant chaque URL des endpoints de l'API (`https://www.strasbourg.eu/api/...` devient `https://username:password@www.strasbourg.eu/api...`)
+  
 
-api = kittn.authorize('meowmeowmeow')
-```
+# Evénements
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+## Tous les événements
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "https://strasbourg.eu/api/jsonws/agenda.event/get-events"
+  -H "Authorization: KEY"
 ```
 
 ```javascript
@@ -95,63 +47,102 @@ let api = kittn.authorize('meowmeowmeow');
 let kittens = api.kittens.get();
 ```
 
-> The above command returns JSON structured like this:
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "id": "1",
+    "externalId": "event_1",
+    "title": {
+      "fr_FR": "Titre de l'événement",
+      "en_US": "Event title",
+    },
+    "subtitle": {
+      "fr_FR": "Sous-titre de l'événement",
+      "en_US": "Event subtitle"
+    },
+    "description": {
+      "fr_FR": "<p>Description de l'événement</p>",
+      "en_US": "<p>Event description</p>"
+    },
+    "imageURL": "http://URL_DE_L_ILLUSTRATION",
+    "imageCopyright": "Copyright de l'image",
+    "periods": [
+      {
+        "endDate": "yyyy-MM-dd",
+        "startDate": "yyyy-MM-dd",
+        "timeDetail": {
+          "fr_FR": "De 16 à 18h",
+          "de_DE": "From 4 to 6pm"
+        },
+      }
+    ],
+    "place": {
+      "name": {
+        "fr_FR": "Nom du lieu où l'événement à lieu",
+        "en_US": "Event place name",
+      },
+      "streetNumber": "Numéro de la rue",
+      "streetName": "Nom de la rue",
+      "zipCode": "Code postal",
+      "city": "Ville",
+      "accessForBlind": false,
+      "accessForWheelchair": false,
+      "accessForDeaf": false,
+      "accessForDeficient": false,
+      "accessForElder": false,
+      "access": {
+        "fr_FR": "<p>Détails sur les accès au lieu de l'événement</p>",
+        "en_US": "<p>Event access details</p>",
+      },
+      "accessForDisabled": {
+        "fr_FR": "<p>Détails sur les accès au lieu de l'événement pour les personnes handicapées</p>",
+        "en_US": "<p>Access details for disabled people</p>",
+      },
+    },
+    "freeEntry": 2,
+    "price": {
+      "fr_FR": "<p>Tarifs de l'événement</p>",
+      "en_US": "<p>Event price</p>",
+    },
+    "types": [
+      "83504"
+    ],
+    "themes": [
+      "126203"
+    ],
+    "territories": [
+      "83503"
+    ],
+    "categories": [
+      "83503",
+      "83504",
+      "126203"
+    ],
+    "eventURL": "https://www.strasbourg.eu/-/entity/id/000001",
+  }, {
+    "id": "000002",
+    ...
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+Ce endpoint renvoie l'ensemble des événements qui ont lieu dans l'Eurométropole de Strasbourg.
 
-### HTTP Request
+### Requête HTTP
 
-`GET http://example.com/api/kittens`
+`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events`
 
-### Query Parameters
+### Paramètres
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+*Aucun*
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Un événement spécifique
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/2"
+  -H "Authorization: KEY"
 ```
 
 ```javascript
@@ -161,29 +152,23 @@ let api = kittn.authorize('meowmeowmeow');
 let max = api.kittens.get(2);
 ```
 
-> The above command returns JSON structured like this:
+> La structure JSON renvoyée est la suivante
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "id": "1",
+  ...
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+Ce endpoint renvoie un événement spécifique.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/<ID>`
 
-### URL Parameters
+### Paramètres
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
-
+ID | L'identifiant de l'événement à renvoyer
