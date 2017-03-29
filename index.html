@@ -229,16 +229,18 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Bienvenue sur la documentation des APIs de Strasbourg.eu. Ces APIs vous permettront d&#39;accéder à différentes données de Strasbourg.eu comme les événements et les lieux de la ville de Strasbourg.</p>
+<p>Bienvenue sur la documentation des APIs de Strasbourg.eu. </p>
+
+<p>Ces APIs vous permettront d&#39;accéder à différentes données de Strasbourg.eu comme les événements et les lieux de l&#39;Eurométropole de Strasbourg.</p>
 
 <h1 id="authentication">Authentication</h1>
 
 <p>L&#39;accès à l&#39;API est protégé par une authentification HTTP. Vous devez posséder un compte utilisateur sur Strasbourg.eu pour y accéder.</p>
 
-<p>Deux méthodes sont possibles pour utiliser l&#39;API :</p>
+<p>Deux méthodes sont possibles pour s&#39;authentifier auprès de l&#39;API :</p>
 
 <ul>
-<li><p>Ajoutez le header HTTP suivant à chacune de vos requêtes, où la key est la valeur en base 64 de la chaine de caractères &lsquo;username:password&rsquo; : <code class="prettyprint">Authorization: KEY</code>, vous pouvez utiliser un encodeur en ligne comme <a href="celui-ci">http://www.motobit.com/util/base64-decoder-encoder.asp</a> pour effectuer l&#39;encodage</p></li>
+<li><p>Ajoutez le header HTTP <code class="prettyprint">Authorization: KEY</code> à chacune de vos requêtes, où KEY est la valeur en base 64 de la chaine de caractères &lsquo;username:password&rsquo; : , vous pouvez utiliser un encodeur en ligne comme <a href="http://www.motobit.com/util/base64-decoder-encoder.asp">celui-ci</a> pour effectuer l&#39;encodage</p></li>
 <li><p>Ajoutez &lsquo;username:password@&rsquo; devant chaque URL des endpoints de l&#39;API (<code class="prettyprint">https://www.strasbourg.eu/api/...</code> devient <code class="prettyprint">https://username:password@www.strasbourg.eu/api...</code>)</p></li>
 </ul>
 
@@ -292,11 +294,11 @@
       </span><span class="s2">"streetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la rue"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code postal"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ville"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event access details&lt;/p&gt;"</span><span class="p">,</span><span class="w">
@@ -345,10 +347,6 @@
 <h2 id="un-v-nement-sp-cifique">Un événement spécifique</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/2"</span>
   -H <span class="s2">"Authorization: KEY"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante</p>
@@ -375,64 +373,6 @@
 <tr>
 <td>ID</td>
 <td>L&#39;identifiant de l&#39;événement à renvoyer</td>
-</tr>
-</tbody></table>
-
-          <h1 id="errors">Errors</h1>
-
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 
