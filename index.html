@@ -234,7 +234,11 @@
 
 <h1 id="authentication">Authentication</h1>
 
-<p>L&#39;accès à l&#39;API est protégé par une authentification HTTP. Vous devez posséder un compte utilisateur sur Strasbourg.eu pour y accéder.</p>
+<p>Certaines APIs sont publiques, d&#39;autres sont protégées par une authentification HTTP.</p>
+
+<p>Les APIs publiques sont indiquées comme telles dans la documentation.</p>
+
+<p>Vous devez posséder un compte utilisateur sur Strasbourg.eu pour accéder aux endpoints protégés.</p>
 
 <p>Deux méthodes sont possibles pour s&#39;authentifier auprès de l&#39;API :</p>
 
@@ -677,6 +681,36 @@
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories</code></p>
+
+<h2 id="liste-des-territoires">Liste des territoires</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
+  -H "</span>Authorization: KEY<span class="s2">"
+</span></code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">    
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service 1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des territoires pouvant être référencés par d&#39;autres entités, comme les événements où les lieux.</p>
+
+<aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-services</code></p>
 
       </div>
       <div class="dark-box">
