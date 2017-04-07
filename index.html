@@ -682,7 +682,7 @@
 
 <p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories</code></p>
 
-<h2 id="liste-des-territoires">Liste des territoires</h2>
+<h2 id="liste-des-services-gestionnaires">Liste des services gestionnaires</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
   -H "</span>Authorization: KEY<span class="s2">"
 </span></code></pre>
@@ -704,7 +704,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Ce endpoint renvoie la liste des territoires pouvant être référencés par d&#39;autres entités, comme les événements où les lieux.</p>
+<p>Ce endpoint renvoie la liste des services gestionnaires des événements.</p>
 
 <aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;</aside>
 
