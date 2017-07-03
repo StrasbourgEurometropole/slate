@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
  - events
+ - places
  - categories
 search: true
 ---
@@ -20,9 +21,13 @@ Bienvenue sur la documentation des APIs de Strasbourg.eu.
 
 Ces APIs vous permettront d'accéder à différentes données de Strasbourg.eu comme les événements et les lieux de l'Eurométropole de Strasbourg.
 
-# Authentication
+# Authentification
 
-L'accès à l'API est protégé par une authentification HTTP. Vous devez posséder un compte utilisateur sur Strasbourg.eu pour y accéder.
+Certaines APIs sont publiques, d'autres sont protégées par une authentification HTTP.
+
+Les APIs publiques sont indiquées comme telles dans la documentation.
+
+Vous devez posséder un compte utilisateur sur Strasbourg.eu pour accéder aux endpoints protégés.
 
 Deux méthodes sont possibles pour s'authentifier auprès de l'API :
 

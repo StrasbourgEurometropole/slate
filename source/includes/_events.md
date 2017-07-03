@@ -106,7 +106,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/2"
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 {
@@ -124,7 +124,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -134,13 +134,14 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/
   }, {
     "id": "2",
     ...
-  }
+  },
+  ...
 ]
 ```
 
 Ce endpoint renvoie la liste des événements qui se déroulent un jour donné.
 
-### HTTP Request
+### Requête HTTP
 
 `GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/<DATE>`
 
@@ -157,7 +158,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/c
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -167,7 +168,8 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/c
   }, {
     "id": "2",
     ...
-  }
+  },
+  ...
 ]
 ```
 
@@ -178,7 +180,7 @@ Ce endpoint renvoie la liste des événements qui possèdent une catégorie donn
   Référez-vous à la documentation concernant les catégories pour savoir comment connaître ces différentes catégories et leurs identifiants.
 </aside>
 
-### HTTP Request
+### Requête HTTP
 
 `GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/<ID>`
 
@@ -196,7 +198,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/plac
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -216,7 +218,7 @@ Ce endpoint renvoie la liste des événements qui se déroulent dans le lieu pas
   Afin de connaître les différents lieux existant et de récupérer leurs identifiants, référez-vous à la documentation concernant les lieux.
 </aside>
 
-### HTTP Request
+### Requête HTTP
 
 `GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/<ID>`
 
@@ -234,7 +236,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/l
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -244,17 +246,18 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/l
   }, {
     "id": "2",
     ...
-  }
+  },
+  ...
 ]
 ```
 
 Ce endpoint renvoie la liste des événements qui possèdent une traduction dans la langue donnée.
 
 <aside class="notice">
-  Sur Strasbourg.eu, les lieux peuvent être dispoonbiles en Français ("fr_FR"), anglais ("en_US") et/ou allemand ("de_DE").
+  Sur Strasbourg.eu, les événements peuvent être dispoonbiles en Français ("fr_FR"), anglais ("en_US") et/ou allemand ("de_DE").
 </aside>
 
-### HTTP Request
+### Requête HTTP
 
 `GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/language/<LANGUAGE>`
 

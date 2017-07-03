@@ -7,7 +7,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -41,7 +41,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -87,7 +87,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-types
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -119,7 +119,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-types
 
 Ce endpoint renvoie la liste des types d'événements.
 
-<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
+<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId". Une catégorie racine n'a pas de propriété "level", une catégorie ayant un parent possède un level de 1, deux parents 2, etc.</aside>
 
 ### HTTP Request
 
@@ -133,7 +133,7 @@ curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
   -H "Authorization: KEY"
 ```
 
-> La structure JSON renvoyée est la suivante
+> La structure JSON renvoyée est la suivante :
 
 ```json
 [
@@ -179,3 +179,37 @@ Ce endpoint renvoie la liste des territoires pouvant être référencés par d'a
 ### HTTP Request
 
 `GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories`
+
+## Liste des services gestionnaires
+
+```shell
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
+  -H "Authorization: KEY"
+```
+
+> La structure JSON renvoyée est la suivante
+
+```json
+[
+  {    
+    "id": "1",
+    "name": {
+      "fr_FR": "Service 1"
+    }
+  },
+  {
+    "id": "2"
+    "name": {
+      "fr_FR": "Service 2"
+    }
+  }
+]
+```
+
+Ce endpoint renvoie la liste des services gestionnaires des événements.
+
+<aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
+
+### HTTP Request
+
+`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-services`
