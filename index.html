@@ -232,7 +232,7 @@
 
 <p>Ces APIs vous permettront d&#39;accéder à différentes données de Strasbourg.eu comme les événements et les lieux de l&#39;Eurométropole de Strasbourg.</p>
 
-<h1 id="authentication">Authentication</h1>
+<h1 id="authentification">Authentification</h1>
 
 <p>Certaines APIs sont publiques, d&#39;autres sont protégées par une authentification HTTP.</p>
 
@@ -348,7 +348,7 @@
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
@@ -362,7 +362,7 @@
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -371,12 +371,13 @@
   </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des événements qui se déroulent un jour donné.</p>
 
-<h3 id="http-request">HTTP Request</h3>
+<h3 id="requ-te-http">Requête HTTP</h3>
 
 <p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/&lt;DATE&gt;</code></p>
 
@@ -399,7 +400,7 @@
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -408,7 +409,8 @@
   </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des événements qui possèdent une catégorie donnée.</p>
@@ -418,7 +420,7 @@
   Référez-vous à la documentation concernant les catégories pour savoir comment connaître ces différentes catégories et leurs identifiants.
 </aside>
 
-<h3 id="http-request">HTTP Request</h3>
+<h3 id="requ-te-http">Requête HTTP</h3>
 
 <p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/&lt;ID&gt;</code></p>
 
@@ -441,7 +443,7 @@
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -459,7 +461,7 @@
   Afin de connaître les différents lieux existant et de récupérer leurs identifiants, référez-vous à la documentation concernant les lieux.
 </aside>
 
-<h3 id="http-request">HTTP Request</h3>
+<h3 id="requ-te-http">Requête HTTP</h3>
 
 <p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/&lt;ID&gt;</code></p>
 
@@ -482,7 +484,7 @@
   -H <span class="s2">"Authorization: KEY"</span>
 </code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
@@ -491,16 +493,17 @@
   </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des événements qui possèdent une traduction dans la langue donnée.</p>
 
 <aside class="notice">
-  Sur Strasbourg.eu, les lieux peuvent être dispoonbiles en Français (&ldquo;fr_FR&rdquo;), anglais (&ldquo;en_US&rdquo;) et/ou allemand (&ldquo;de_DE&rdquo;).
+  Sur Strasbourg.eu, les événements peuvent être dispoonbiles en Français (&ldquo;fr_FR&rdquo;), anglais (&ldquo;en_US&rdquo;) et/ou allemand (&ldquo;de_DE&rdquo;).
 </aside>
 
-<h3 id="http-request">HTTP Request</h3>
+<h3 id="requ-te-http">Requête HTTP</h3>
 
 <p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/language/&lt;LANGUAGE&gt;</code></p>
 
@@ -518,6 +521,372 @@
 </tr>
 </tbody></table>
 
+          <h1 id="lieux">Lieux</h1>
+
+<h2 id="tous-les-lieux">Tous les lieux</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"idSurfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ID_SIG"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lieu"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Place name"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Description du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place description&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://strasbourg.eu/images/cathedrale-1.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image principale"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://strasbourg.eu/images/cathedrale-2.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image secondaire"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"serviceAndActivities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Services et activités du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place services and activities&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"characteristics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Caractéristiques du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place characteristics&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Tarifs du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place price&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adresse complète"</span><span class="w">
+    </span><span class="s2">"distribution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Distribution"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rue"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"complement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Complément d'adresse"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code postal"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"districtCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code SIG du quartier"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cityCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code SIG de la ville"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ville"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pays"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RGF93X"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée Y RGF93"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RGF93Y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée X RGF93"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mercatorX"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée X mercator"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mercatorY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée Y mercator"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"TYPE_1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"TYPE_2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"mail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact@place.eu"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0101010101"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"facebookName"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la page Facebook"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook page name"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"facebookURL"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL de la page Facebook"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook page URL"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"websiteName"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du site internet"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website name"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"websiteURL"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL du site internet"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website URL"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Accès&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"accessForDisabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Accès handicapé&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access for disabled people&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"periodName"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la période"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period name"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"scheduleLinkName"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lien vers le détail des horaires pour la période"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period schedule detail link name"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"scheduleLinkURL"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lien vers le détail des horaires pour la période"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schedule detail link"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"alwaysOpen"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"schedules"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+         </span><span class="s2">"dayOfWeek"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">à</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"startHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"endHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">}]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"exceptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description de l'exception"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exception description"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"closed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"startHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"endHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"exceptionalSchedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Programme exceptionnel"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exceptionnal schedule"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"additionalInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informations complémentaires"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional information"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://youtube.com/AaaAaA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://youtube.com/bbBBBb"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://strasbourg.eu/documents/programme.pdf"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"friendlyURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.strasbourg.eu/-/entity/id/000001"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000002"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie l&#39;ensemble des lieux de l&#39;Eurométropole de Strasbourg.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/place.place/get-places</code></p>
+
+<h3 id="description-des-champs">Description des champs</h3>
+
+<p><em>TODO</em></p>
+
+<h2 id="lieu-par-identifiant">Lieu par identifiant</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id/id/&lt;ID&gt;"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie le lieu correspondant à l&#39;identifiant SIG passé en paramètre.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id/id/&lt;ID&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Identifiant du lieu</td>
+</tr>
+</tbody></table>
+
+<h2 id="lieu-par-identifiant-sig">Lieu par identifiant SIG</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-sig-id/sig-id/10_ENF_2"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie le lieu correspondant à l&#39;identifiant SIG passé en paramètre.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-sig-id/sig-id/Cat_06_01</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID_SIG</td>
+<td>Identifiant SIG du lieu</td>
+</tr>
+</tbody></table>
+
+<h2 id="liste-des-lieux-par-type">Liste des lieux par type</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/Cat_06_05"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du type de lieu passé en paramètre.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/&lt;ID_TYPE&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TYPE_ID</td>
+<td>Identifiant SIG du type de lieu</td>
+</tr>
+</tbody></table>
+
+<h2 id="liste-des-lieux-par-territoire">Liste des lieux par territoire</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory/territory-id/P_FR"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire passé en paramètre.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory/territory-id/&lt;ID_TERRITORY&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TERRITORY_ID</td>
+<td>Identifiant SIG du territoire</td>
+</tr>
+</tbody></table>
+
+<h2 id="liste-des-lieux-par-territoire-et-type">Liste des lieux par territoire et type</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/P_FR/type-id/&lt;ID_TYPE&gt;"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/&lt;ID_TERRITORY&gt;/type-id/&lt;ID_TYPE&gt;</code></p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TERRITORY_ID</td>
+<td>Identifiant SIG du territoire</td>
+</tr>
+<tr>
+<td>TYPE_ID</td>
+<td>Identifiant SIG du type de lieu</td>
+</tr>
+</tbody></table>
+
+<h2 id="liste-des-lieux-par-nom">Liste des lieux par nom</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-name-and-language/name/piscine/-language
+</span></code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des lieux ayant un nom contenant la chaîne de caractère passée en paramètre.</p>
+
+<h3 id="requ-te-http">Requête HTTP</h3>
+
+<p>`GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-name-and-language/keyword/<KEYWORD>/-language</p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>KEYWORD</td>
+<td>Mot-clé de recherche</td>
+</tr>
+</tbody></table>
+
           <h1 id="cat-gories">Catégories</h1>
 
 <h2 id="liste-des-publics">Liste des publics</h2>
@@ -525,7 +894,7 @@
   -H "</span>Authorization: KEY<span class="s2">"
 </span></code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">    
@@ -555,7 +924,7 @@
   -H "</span>Authorization: KEY<span class="s2">"
 </span></code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">    
@@ -596,7 +965,7 @@
   -H "</span>Authorization: KEY<span class="s2">"
 </span></code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">    
@@ -626,7 +995,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des types d&#39;événements.</p>
 
-<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;</aside>
+<aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété &ldquo;level&rdquo; et l'identifiant de la catégorie parente par &ldquo;parentId&rdquo;. Une catégorie racine n'a pas de propriété &ldquo;level&rdquo;, une catégorie ayant un parent possède un level de 1, deux parents 2, etc.</aside>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -637,7 +1006,7 @@
   -H "</span>Authorization: KEY<span class="s2">"
 </span></code></pre>
 <blockquote>
-<p>La structure JSON renvoyée est la suivante</p>
+<p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">    
