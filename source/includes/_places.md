@@ -185,7 +185,7 @@ ID | Identifiant du lieu
 ## Lieu par identifiant SIG
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id-sig/sig-id/<ID_SIG>"
+curl "https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id-sig/sig-id/10_ENF_2"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -201,7 +201,7 @@ Ce endpoint renvoie le lieu correspondant à l'identifiant SIG passé en paramè
 
 ### Requête HTTP
 
-`GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-sig-id/sig-id/Cat_06_01`
+`GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id-sig/sig-id/<ID_SIG>`
 
 ### Paramètres
 
