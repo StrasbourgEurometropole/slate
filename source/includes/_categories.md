@@ -4,7 +4,7 @@
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -38,7 +38,7 @@ Ce endpoint renvoie la liste des types de publics susceptibles d'assister à un 
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -84,7 +84,7 @@ Ce endpoint renvoie la liste des thèmes des événements.
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-types
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -130,7 +130,7 @@ Ce endpoint renvoie la liste des types d'événements.
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -184,7 +184,7 @@ Ce endpoint renvoie la liste des territoires pouvant être référencés par d'a
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante

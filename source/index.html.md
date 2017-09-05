@@ -11,6 +11,7 @@ toc_footers:
 includes:
  - events
  - places
+ - interests
  - categories
 search: true
 ---
@@ -31,6 +32,6 @@ Vous devez posséder un compte utilisateur sur Strasbourg.eu pour accéder aux e
 
 Deux méthodes sont possibles pour s'authentifier auprès de l'API :
 
-* Ajoutez le header HTTP `Authorization: KEY` à chacune de vos requêtes, où KEY est la valeur en base 64 de la chaine de caractères 'username:password' : , vous pouvez utiliser un encodeur en ligne comme [celui-ci](http://www.motobit.com/util/base64-decoder-encoder.asp) pour effectuer l'encodage
+* Ajoutez le header HTTP `Authorization: Basic KEY` à chacune de vos requêtes, où KEY est la valeur en base 64 de la chaine de caractères 'username:password' : , vous pouvez utiliser un encodeur en ligne comme [celui-ci](http://www.motobit.com/util/base64-decoder-encoder.asp) pour effectuer l'encodage
 
 * Ajoutez 'username:password@' devant chaque URL des endpoints de l'API (`https://www.strasbourg.eu/api/...` devient `https://username:password@www.strasbourg.eu/api...`)

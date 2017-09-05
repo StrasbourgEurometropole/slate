@@ -5,7 +5,7 @@
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events"
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -103,7 +103,7 @@ Ce endpoint renvoie l'ensemble des événements qui ont lieu dans l'Eurométropo
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-event/id/2"
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -121,7 +121,7 @@ Ce endpoint renvoie un événement spécifique.
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/01102018"
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -147,7 +147,7 @@ Ce endpoint renvoie la liste des événements qui se déroulent un jour donné.
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 DATE | Date au format ddMMyyyy (exemple : 1er octobre 2018 devient 01102018)
 
@@ -155,7 +155,7 @@ DATE | Date au format ddMMyyyy (exemple : 1er octobre 2018 devient 01102018)
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/125"
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -186,7 +186,7 @@ Ce endpoint renvoie la liste des événements qui possèdent une catégorie donn
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 ID | Identifiant de la catégorie
 
@@ -195,7 +195,7 @@ ID | Identifiant de la catégorie
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/125"
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -224,7 +224,7 @@ Ce endpoint renvoie la liste des événements qui se déroulent dans le lieu pas
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 ID | Identifiant du lieu
 
@@ -233,7 +233,7 @@ ID | Identifiant du lieu
 
 ```shell
 curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-language/language/fr_FR"
-  -H "Authorization: KEY"
+  -H "Authorization: Basic KEY"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -263,7 +263,7 @@ Ce endpoint renvoie la liste des événements qui possèdent une traduction dans
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 LANGUAGE | Langue : "fr_FR" pour le français, "en_US" pour l'anglais, "de_DE" pour l'allemand
 

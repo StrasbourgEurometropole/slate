@@ -178,7 +178,7 @@ Ce endpoint renvoie le lieu correspondant à l'identifiant SIG passé en paramè
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 ID | Identifiant du lieu
 
@@ -205,7 +205,7 @@ Ce endpoint renvoie le lieu correspondant à l'identifiant SIG passé en paramè
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 ID_SIG | Identifiant SIG du lieu
 
@@ -239,7 +239,7 @@ Ce endpoint renvoie la liste des lieux correspondant à l'identifiant SIG du typ
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 TYPE_ID | Identifiant SIG du type de lieu
 
@@ -273,7 +273,7 @@ Ce endpoint renvoie la liste des lieux correspondant à l'identifiant SIG du ter
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 TERRITORY_ID | Identifiant SIG du territoire
 
@@ -307,7 +307,7 @@ Ce endpoint renvoie la liste des lieux correspondant à l'identifiant SIG du ter
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 TERRITORY_ID | Identifiant SIG du territoire
 TYPE_ID | Identifiant SIG du type de lieu
@@ -342,6 +342,6 @@ Ce endpoint renvoie la liste des lieux ayant un nom contenant la chaîne de cara
 
 ### Paramètres
 
-Parameter | Description
+Paramètre | Description
 --------- | -----------
 KEYWORD | Mot-clé de recherche
