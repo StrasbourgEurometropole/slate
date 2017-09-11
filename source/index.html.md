@@ -12,6 +12,7 @@ includes:
  - events
  - places
  - interests
+ - notifications
  - categories
 search: true
 ---
