@@ -991,6 +991,264 @@
 </tr>
 </tbody></table>
 
+          <h1 id="notifications">Notifications</h1>
+
+<h2 id="types-de-notification">Types de notification</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-types"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYPE_1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 2"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYPE_2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des types de notification.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/notification.notification/get-types</code></p>
+
+<h2 id="canaux-de-notification">Canaux de notification</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-channels"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des canaux de notification proposés aux utilisateurs.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.strasbourg.eu/api/jsonws/notification.notification/get-channels</code></p>
+
+<h2 id="r-glages-utilisateurs">Réglages utilisateurs</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-user-settings"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>  
+  -F <span class="s2">"userId=USER_ID"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYPE_1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 2"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYPE_2"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"EMAIL"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_ID"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des types de notifications auxquels l&#39;utilisateur est abonné ainsi que la liste des canaux qu&#39;il a choisi.</p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>USER_ID</td>
+<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
+</tr>
+</tbody></table>
+
+<h2 id="mise-jour-des-r-glages-dun-utilisateur">Mise à jour des réglages d&#39;un utilisateur</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/set-user-settings"</span>
+  -F <span class="s2">"userId=USER_ID"</span>
+  -F <span class="s2">"typeIds=TYPE_IDS"</span>
+  -F <span class="s2">"channelIds=CHANNEL_IDS"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYPE_1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"PHONE"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M0cG+MtX8/Zr+zSMuI+H7yTC7SeEHT/tvYr1BsdqZic="</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint permet de mettre à jour les réglages d&#39;un utilisateur.</p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>USER_ID</td>
+<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
+</tr>
+<tr>
+<td>TYPE_IDS</td>
+<td>Liste de tous les types de notification à assigner à l&#39;utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d&#39;intérêts de l&#39;utilisateur)</td>
+</tr>
+<tr>
+<td>CHANNEL_IDS</td>
+<td>Liste de tous les canaux de notification à assigner à l&#39;utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d&#39;intérêts de l&#39;utilisateur)</td>
+</tr>
+</tbody></table>
+
+<h2 id="notifications-utilisateurs">Notifications utilisateurs</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-user-notifications"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>  
+  -F <span class="s2">"userId=USER_ID"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"notifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"isRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notification de type 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"279201"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Notification de type 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"publicationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon Sep 11 13:12:00 GMT 2017"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon Sep 11 13:12:00 GMT 2017"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"isRead"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ma super notif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"279801"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ma super notif"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"publicationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon Dec 03 10:15:30 GMT 2007"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expirationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fri Dec 03 10:15:30 GMT 2027"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint permet de récupérer la liste des notifications d&#39;un utilisateurs.</p>
+
+<h2 id="ajout-dune-notification">Ajout d&#39;une notification</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/set-user-settings"</span>
+  -F <span class="s2">"isGlobal=IS_GLOBAL"</span>
+  -F <span class="s2">"userId=USER_ID"</span>
+  -F <span class="s2">"typeId=TYPE_IDS"</span>
+  -F <span class="s2">"title=TITLE"</span>
+  -F <span class="s2">"description=DESCRIPTION"</span>
+  -F <span class="s2">"url=URL"</span>
+  -F <span class="s2">"publicationDate=PUBLICATION_DATE"</span>
+  -F <span class="s2">"expirationDate=EXPIRATION_DATE"</span>
+  -F <span class="s2">"url=URL"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Type de notification 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TYPE_1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"PHONE"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M0cG+MtX8/Zr+zSMuI+H7yTC7SeEHT/tvYr1BsdqZic="</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint permet de mettre à jour les réglages d&#39;un utilisateur.</p>
+
+<h3 id="param-tres">Paramètres</h3>
+
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>IS_GLOBAL</td>
+<td>&ldquo;true&rdquo; si la notification doit être envoyée à tous les utilisateurs abonnés au type, false&quot; si la notification s&#39;applique à un utilisateur en particulier</td>
+</tr>
+<tr>
+<td>USER_ID</td>
+<td>Identifiant de l&#39;utilisateur dans la base Publik, doit être vide si IS_GLOBAL est &ldquo;true&rdquo;</td>
+</tr>
+<tr>
+<td>TYPE_ID</td>
+<td>Type de la notification</td>
+</tr>
+<tr>
+<td>TITLE</td>
+<td>Titre de la notification</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>Description de la notification</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>Si la notification correspond à une page en particulier, URL de cette page, sinon chaîne vide</td>
+</tr>
+<tr>
+<td>PUBLICATION_DATE</td>
+<td>Date d&#39;envoi de la notification (format YYYY-mm-DDTHH-MM-SS)</td>
+</tr>
+<tr>
+<td>EXPIRATION_DATE</td>
+<td>Date d&#39;expiration de la notification, forcément ultérieure à la date de publication (format YYYY-mm-DDTHH-MM-SS)</td>
+</tr>
+</tbody></table>
+
           <h1 id="cat-gories">Catégories</h1>
 
 <h2 id="liste-des-publics">Liste des publics</h2>
