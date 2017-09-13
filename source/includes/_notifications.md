@@ -13,13 +13,13 @@ curl "https://www.strasbourg.eu/api/jsonws/notification.notification/get-types"
 [
     {
         "name": {
-            "en_US": "Type de notification 1"
+            "fr_FR": "Type de notification 1"
         },
         "id": "TYPE_1"
     },
     {
         "name": {
-            "en_US": "Type de notification 2"
+            "fr_FR": "Type de notification 2"
         },
         "id": "TYPE_2"
     }
@@ -121,7 +121,7 @@ curl -X POST "https://www.strasbourg.eu/api/jsonws/notification.notification/set
     "types": [
         {
             "name": {
-                "en_US": "Type de notification 1"
+                "fr_FR": "Type de notification 1"
             },
             "id": "TYPE_1"
         }
@@ -206,7 +206,7 @@ curl -X POST "https://www.strasbourg.eu/api/jsonws/notification.notification/set
     "types": [
         {
             "name": {
-                "en_US": "Type de notification 1"
+                "fr_FR": "Type de notification 1"
             },
             "id": "TYPE_1"
         }
