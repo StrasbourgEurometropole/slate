@@ -9,11 +9,48 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation générée par Slate</a>
 
 includes:
- - events
- - places
- - interests
- - notifications
- - categories
+ - events/title
+ - events/all
+ - events/get
+ - events/by-date
+ - events/by-category
+ - events/by-place
+ - events/by-locale
+ - events/themes
+ - events/types
+ - events/publics
+
+ - places/title
+ - places/get
+ - places/by-sig
+ - places/by-type
+ - places/by-territory
+ - places/by-territory-and-type
+ - places/by-name
+ 
+ - interests/title
+ - interests/get
+ - interests/user-interests
+ - interests/update-user-interests
+ 
+ - notifications/title
+ - notifications/types
+ - notifications/channels
+ - notifications/settings
+ - notifications/set-settings
+ - notifications/get
+ - notifications/add
+
+ - favorites/title
+ - favorites/types
+ - favorites/get
+ - favorites/add
+ - favorites/delete
+
+ - categories/title
+ - categories/territories
+ - categories/services
+
 search: true
 ---
 
