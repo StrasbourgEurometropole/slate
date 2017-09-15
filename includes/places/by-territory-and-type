@@ -1,0 +1,35 @@
+<h2 id='liste-des-lieux-par-territoire-et-type'>Liste des lieux par territoire et type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/P_FR/type-id/&lt;ID_TYPE&gt;"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
+<h3 id='requete-http'>Requête HTTP</h3>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/&lt;ID_TERRITORY&gt;/type-id/&lt;ID_TYPE&gt;</code></p>
+<h3 id='parametres'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TERRITORY_ID</td>
+<td>Identifiant SIG du territoire</td>
+</tr>
+<tr>
+<td>TYPE_ID</td>
+<td>Identifiant SIG du type de lieu</td>
+</tr>
+</tbody></table>
