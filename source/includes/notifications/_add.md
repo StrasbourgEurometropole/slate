@@ -54,6 +54,7 @@ isGlobal is true but userId is not empty | Le paramètre isGlobal est "true" mai
 user does not exist | Le userId ne correspond à aucun utilisateur connu chez nous
 title is empty | Le titre est vide
 description is empty | La description est vide
+url is not valid | L'URL n'est pas valide
 publication date is after expiration date | La date de publication est ultérieure à la date de dépublication
 wrong date format | Le format de la date n’est pas correct
 type does not exist | Le type n’existe pas

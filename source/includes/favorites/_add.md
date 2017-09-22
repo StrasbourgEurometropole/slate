@@ -34,7 +34,7 @@ userId | Identifiant de l'utilisateur dans la base Publik
 typeId | Type du favori
 title | Titre du favori
 url | URL cible du favori
-entityId | Identifiant de l'entité mise en favori - s'il ne s'agit pas d'une entité de Strasbourg.eu, passer la valeur 0 en paramètre
+entityId | Identifiant de l'entité mise en favori - s'il ne s'agit pas d'une entité de Strasbourg.eu, passer la valeur 0 en paramètre (uniquement pour le type de favoris "procédure")
 
 ### Messages d'erreurs
 
@@ -43,6 +43,8 @@ Message | Cause
 not authorized | L'utilisateur accédant au endpoint n'a pas les droits nécessaires à la réalisation de cette action
 type does not exist | Le type n’existe pas
 entity does not exist | L'entité n'existe pas
+title is empty | Le titre est vide
+url is not valid | L'URL n'est pas valide
 unknown error | Erreur inconnue
 
 ### Message de succès
