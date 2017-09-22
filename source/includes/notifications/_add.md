@@ -42,8 +42,8 @@ typeId | Type de la notification
 title | Titre de la notification
 description | Description de la notification
 url | Si la notification correspond à une page en particulier, URL de cette page, sinon chaîne vide
-publicationDate | Date d'envoi de la notification (format yyyy-MM-ddThh-mm-ss)
-expirationDate | Date d'expiration de la notification, forcément ultérieure à la date de publication (format yyyy-MM-ddThh-mm-ss)
+publicationDate | Date d'envoi de la notification (format yyyy-MM-ddThh:mm:ss)
+expirationDate | Date d'expiration de la notification, forcément ultérieure à la date de publication (format yyyy-MM-ddThh:mm:ss)
 
 ### Messages d'erreurs
 
