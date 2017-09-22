@@ -326,10 +326,10 @@
                     <a href="#liste-des-favoris-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Favoris">Liste des favoris d'un utilisateur</a>
                   </li>
                   <li>
-                    <a href="#ajout-d-39-un-favoris" class="toc-h2 toc-link" data-title="Favoris">Ajout d'un favoris</a>
+                    <a href="#ajout-d-39-un-favori" class="toc-h2 toc-link" data-title="Favoris">Ajout d'un favori</a>
                   </li>
                   <li>
-                    <a href="#suppression-d-39-un-favoris" class="toc-h2 toc-link" data-title="Favoris">Suppression d'un favoris</a>
+                    <a href="#suppression-d-39-un-favori" class="toc-h2 toc-link" data-title="Favoris">Suppression d'un favori</a>
                   </li>
               </ul>
           </li>
@@ -1429,7 +1429,7 @@
 <td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
 </tr>
 </tbody></table>
-<h2 id='ajout-d-39-un-favoris'>Ajout d&#39;un favoris</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorite"</span>
+<h2 id='ajout-d-39-un-favori'>Ajout d&#39;un favori</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorite"</span>
   -F <span class="s2">"userId=USER_ID"</span>
   -F <span class="s2">"typeId=TYPE_ID"</span>
   -F <span class="s2">"title=TITLE"</span>
@@ -1447,7 +1447,7 @@
     </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Ce endpoint permet de créer un nouveau favoris.</p>
+<p>Ce endpoint permet de créer un nouveau favori.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1461,19 +1461,19 @@
 </tr>
 <tr>
 <td>typeId</td>
-<td>Type du favoris</td>
+<td>Type du favori</td>
 </tr>
 <tr>
 <td>title</td>
-<td>Titre du favoris</td>
+<td>Titre du favori</td>
 </tr>
 <tr>
 <td>url</td>
-<td>URL cible du favoris</td>
+<td>URL cible du favori</td>
 </tr>
 <tr>
 <td>entityId</td>
-<td>Identifiant de l&#39;entité mise en favoris - s&#39;il ne s&#39;agit pas d&#39;une entité de Strasbourg.eu, passer la valeur 0 en paramètre</td>
+<td>Identifiant de l&#39;entité mise en favori - s&#39;il ne s&#39;agit pas d&#39;une entité de Strasbourg.eu, passer la valeur 0 en paramètre</td>
 </tr>
 </tbody></table>
 <h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
@@ -1509,10 +1509,10 @@
 </thead><tbody>
 <tr>
 <td>favorite added</td>
-<td>Favoris ajouté</td>
+<td>Favori ajouté</td>
 </tr>
 </tbody></table>
-<h2 id='suppression-d-39-un-favoris'>Suppression d&#39;un favoris</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorite"</span>
+<h2 id='suppression-d-39-un-favori'>Suppression d&#39;un favori</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/delete-favorite"</span>
   -F <span class="s2">"userId=USER_ID"</span>
   -F <span class="s2">"favoriteId=FAVORITE_ID"</span>
   -H <span class="s2">"Authorization: Basic KEY"</span>
@@ -1527,7 +1527,7 @@
     </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Ce endpoint permet de supprimer un favoris.</p>
+<p>Ce endpoint permet de supprimer un favori.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1541,7 +1541,7 @@
 </tr>
 <tr>
 <td>favoriteId</td>
-<td>Identifiant du favoris</td>
+<td>Identifiant du favori</td>
 </tr>
 </tbody></table>
 <h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
@@ -1557,11 +1557,11 @@
 </tr>
 <tr>
 <td>favorite does not exist</td>
-<td>Le favoris n&#39;existe pas</td>
+<td>Le favori n&#39;existe pas</td>
 </tr>
 <tr>
 <td>favorite does not belong to user</td>
-<td>Le favoris existe mais n&#39;appartient pas à l&#39;utilisateur passé en paramètre</td>
+<td>Le favori existe mais n&#39;appartient pas à l&#39;utilisateur passé en paramètre</td>
 </tr>
 <tr>
 <td>unknown error</td>
@@ -1577,7 +1577,7 @@
 </thead><tbody>
 <tr>
 <td>favorite deleted</td>
-<td>Favoris supprimé</td>
+<td>Favori supprimé</td>
 </tr>
 </tbody></table>
 <h1 id='categories'>Catégories</h1><h2 id='liste-des-territoires'>Liste des territoires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
