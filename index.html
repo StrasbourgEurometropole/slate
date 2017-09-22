@@ -294,6 +294,23 @@
               </ul>
           </li>
           <li>
+            <a href="#favoris" class="toc-h1 toc-link" data-title="Favoris">Favoris</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#liste-des-types-de-favoris" class="toc-h2 toc-link" data-title="Favoris">Liste des types de favoris</a>
+                  </li>
+                  <li>
+                    <a href="#liste-des-favoris-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Favoris">Liste des favoris d'un utilisateur</a>
+                  </li>
+                  <li>
+                    <a href="#ajout-d-39-un-favori" class="toc-h2 toc-link" data-title="Favoris">Ajout d'un favori</a>
+                  </li>
+                  <li>
+                    <a href="#suppression-d-39-un-favori" class="toc-h2 toc-link" data-title="Favoris">Suppression d'un favori</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#notifications" class="toc-h1 toc-link" data-title="Notifications">Notifications</a>
               <ul class="toc-list-h2">
                   <li>
@@ -313,23 +330,6 @@
                   </li>
                   <li>
                     <a href="#ajout-d-39-une-notification" class="toc-h2 toc-link" data-title="Notifications">Ajout d'une notification</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#favoris" class="toc-h1 toc-link" data-title="Favoris">Favoris</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#liste-des-types-de-favoris" class="toc-h2 toc-link" data-title="Favoris">Liste des types de favoris</a>
-                  </li>
-                  <li>
-                    <a href="#liste-des-favoris-d-39-un-utilisateur" class="toc-h2 toc-link" data-title="Favoris">Liste des favoris d'un utilisateur</a>
-                  </li>
-                  <li>
-                    <a href="#ajout-d-39-un-favori" class="toc-h2 toc-link" data-title="Favoris">Ajout d'un favori</a>
-                  </li>
-                  <li>
-                    <a href="#suppression-d-39-un-favori" class="toc-h2 toc-link" data-title="Favoris">Suppression d'un favori</a>
                   </li>
               </ul>
           </li>
@@ -1003,6 +1003,269 @@
 <td>Le centre d&#39;intérêt n&#39;existe pas</td>
 </tr>
 </tbody></table>
+<h1 id='favoris'>Favoris</h1><h2 id='liste-des-types-de-favoris'>Liste des types de favoris</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-types"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La structure JSON renvoyée est la suivante :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLACE"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVENT"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIDEO"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EDITION"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMAGE"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEWS"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARTICLE"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCEDURE"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint renvoie la liste des types de favoris.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-types</code></p>
+<h2 id='liste-des-favoris-d-39-un-utilisateur'>Liste des favoris d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-user-favorites"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>  
+  -F <span class="s2">"userId=USER_ID"</span>
+</code></pre>
+<blockquote>
+<p>La réponse est un des deux objet suivant :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"281701"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon événement"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"entityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"190665"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"entityTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Le ballet des ombres heureuses"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"typeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"281702"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon lieu"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"entityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"153866"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"entityTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Crèche collective et halte garderie de la Maison de l’enfance"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"typeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint permet de récupérer la liste des favoris d&#39;un utilisateur.</p>
+
+<p>Le champ &quot;entityTitle&quot; n&#39;est retourné que pour les types correspondant à une entité de Strasbourg.eu (actuellement tout sauf les procédures).</p>
+<h3 id='parametres'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
+</tr>
+</tbody></table>
+<h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
+<table><thead>
+<tr>
+<th>Message</th>
+<th>Cause</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>not authorized</td>
+<td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
+</tr>
+</tbody></table>
+<h2 id='ajout-d-39-un-favori'>Ajout d&#39;un favori</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorite"</span>
+  -F <span class="s2">"userId=USER_ID"</span>
+  -F <span class="s2">"typeId=TYPE_ID"</span>
+  -F <span class="s2">"title=TITLE"</span>
+  -F <span class="s2">"url=URL"</span>
+  -F <span class="s2">"entityId=ENTITY_ID"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La réponse est un des deux objet suivant :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint permet de créer un nouveau favori.</p>
+<h3 id='parametres'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
+</tr>
+<tr>
+<td>typeId</td>
+<td>Type du favori</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Titre du favori</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL cible du favori</td>
+</tr>
+<tr>
+<td>entityId</td>
+<td>Identifiant de l&#39;entité mise en favori - s&#39;il ne s&#39;agit pas d&#39;une entité de Strasbourg.eu, passer la valeur 0 en paramètre (uniquement pour le type de favoris &quot;procédure&quot;)</td>
+</tr>
+</tbody></table>
+<h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
+<table><thead>
+<tr>
+<th>Message</th>
+<th>Cause</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>not authorized</td>
+<td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
+</tr>
+<tr>
+<td>type does not exist</td>
+<td>Le type n’existe pas</td>
+</tr>
+<tr>
+<td>entity does not exist</td>
+<td>L&#39;entité n&#39;existe pas</td>
+</tr>
+<tr>
+<td>title is empty</td>
+<td>Le titre est vide</td>
+</tr>
+<tr>
+<td>url is not valid</td>
+<td>L&#39;URL n&#39;est pas valide</td>
+</tr>
+<tr>
+<td>unknown error</td>
+<td>Erreur inconnue</td>
+</tr>
+</tbody></table>
+<h3 id='message-de-succes'>Message de succès</h3>
+<table><thead>
+<tr>
+<th>Message</th>
+<th>Cause</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>favorite added</td>
+<td>Favori ajouté</td>
+</tr>
+</tbody></table>
+<h2 id='suppression-d-39-un-favori'>Suppression d&#39;un favori</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/delete-favorite"</span>
+  -F <span class="s2">"userId=USER_ID"</span>
+  -F <span class="s2">"favoriteId=FAVORITE_ID"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
+<blockquote>
+<p>La réponse est un des deux objet suivant :</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Ce endpoint permet de supprimer un favori.</p>
+<h3 id='parametres'>Paramètres</h3>
+<table><thead>
+<tr>
+<th>Paramètre</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
+</tr>
+<tr>
+<td>favoriteId</td>
+<td>Identifiant du favori</td>
+</tr>
+</tbody></table>
+<h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
+<table><thead>
+<tr>
+<th>Message</th>
+<th>Cause</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>not authorized</td>
+<td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
+</tr>
+<tr>
+<td>favorite does not exist</td>
+<td>Le favori n&#39;existe pas</td>
+</tr>
+<tr>
+<td>favorite does not belong to user</td>
+<td>Le favori existe mais n&#39;appartient pas à l&#39;utilisateur passé en paramètre</td>
+</tr>
+<tr>
+<td>unknown error</td>
+<td>Erreur inconnue</td>
+</tr>
+</tbody></table>
+<h3 id='message-de-succes'>Message de succès</h3>
+<table><thead>
+<tr>
+<th>Message</th>
+<th>Cause</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>favorite deleted</td>
+<td>Favori supprimé</td>
+</tr>
+</tbody></table>
 <h1 id='notifications'>Notifications</h1><h2 id='liste-des-types-de-notification'>Liste des types de notification</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-types"</span>
   -H <span class="s2">"Authorization: Basic KEY"</span>
 </code></pre>
@@ -1327,269 +1590,6 @@
 <tr>
 <td>notification sent</td>
 <td>Notification envoyée</td>
-</tr>
-</tbody></table>
-<h1 id='favoris'>Favoris</h1><h2 id='liste-des-types-de-favoris'>Liste des types de favoris</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-types"</span>
-  -H <span class="s2">"Authorization: Basic KEY"</span>
-</code></pre>
-<blockquote>
-<p>La structure JSON renvoyée est la suivante :</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLACE"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVENT"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIDEO"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EDITION"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMAGE"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEWS"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARTICLE"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCEDURE"</span><span class="p">,</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Ce endpoint renvoie la liste des types de favoris.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-types</code></p>
-<h2 id='liste-des-favoris-d-39-un-utilisateur'>Liste des favoris d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-user-favorites"</span>
-  -H <span class="s2">"Authorization: Basic KEY"</span>  
-  -F <span class="s2">"userId=USER_ID"</span>
-</code></pre>
-<blockquote>
-<p>La réponse est un des deux objet suivant :</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"281701"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon événement"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"entityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"190665"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"entityTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Le ballet des ombres heureuses"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"typeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"281702"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon lieu"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"entityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"153866"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"entityTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Crèche collective et halte garderie de la Maison de l’enfance"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"typeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Ce endpoint permet de récupérer la liste des favoris d&#39;un utilisateur.</p>
-
-<p>Le champ &quot;entityTitle&quot; n&#39;est retourné que pour les types correspondant à une entité de Strasbourg.eu (actuellement tout sauf les procédures).</p>
-<h3 id='parametres'>Paramètres</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
-</tr>
-</tbody></table>
-<h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
-<table><thead>
-<tr>
-<th>Message</th>
-<th>Cause</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>not authorized</td>
-<td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
-</tr>
-</tbody></table>
-<h2 id='ajout-d-39-un-favori'>Ajout d&#39;un favori</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorite"</span>
-  -F <span class="s2">"userId=USER_ID"</span>
-  -F <span class="s2">"typeId=TYPE_ID"</span>
-  -F <span class="s2">"title=TITLE"</span>
-  -F <span class="s2">"url=URL"</span>
-  -F <span class="s2">"entityId=ENTITY_ID"</span>
-  -H <span class="s2">"Authorization: Basic KEY"</span>
-</code></pre>
-<blockquote>
-<p>La réponse est un des deux objet suivant :</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Ce endpoint permet de créer un nouveau favori.</p>
-<h3 id='parametres'>Paramètres</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
-</tr>
-<tr>
-<td>typeId</td>
-<td>Type du favori</td>
-</tr>
-<tr>
-<td>title</td>
-<td>Titre du favori</td>
-</tr>
-<tr>
-<td>url</td>
-<td>URL cible du favori</td>
-</tr>
-<tr>
-<td>entityId</td>
-<td>Identifiant de l&#39;entité mise en favori - s&#39;il ne s&#39;agit pas d&#39;une entité de Strasbourg.eu, passer la valeur 0 en paramètre (uniquement pour le type de favoris &quot;procédure&quot;)</td>
-</tr>
-</tbody></table>
-<h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
-<table><thead>
-<tr>
-<th>Message</th>
-<th>Cause</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>not authorized</td>
-<td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
-</tr>
-<tr>
-<td>type does not exist</td>
-<td>Le type n’existe pas</td>
-</tr>
-<tr>
-<td>entity does not exist</td>
-<td>L&#39;entité n&#39;existe pas</td>
-</tr>
-<tr>
-<td>title is empty</td>
-<td>Le titre est vide</td>
-</tr>
-<tr>
-<td>url is not valid</td>
-<td>L&#39;URL n&#39;est pas valide</td>
-</tr>
-<tr>
-<td>unknown error</td>
-<td>Erreur inconnue</td>
-</tr>
-</tbody></table>
-<h3 id='message-de-succes'>Message de succès</h3>
-<table><thead>
-<tr>
-<th>Message</th>
-<th>Cause</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>favorite added</td>
-<td>Favori ajouté</td>
-</tr>
-</tbody></table>
-<h2 id='suppression-d-39-un-favori'>Suppression d&#39;un favori</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/delete-favorite"</span>
-  -F <span class="s2">"userId=USER_ID"</span>
-  -F <span class="s2">"favoriteId=FAVORITE_ID"</span>
-  -H <span class="s2">"Authorization: Basic KEY"</span>
-</code></pre>
-<blockquote>
-<p>La réponse est un des deux objet suivant :</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Ce endpoint permet de supprimer un favori.</p>
-<h3 id='parametres'>Paramètres</h3>
-<table><thead>
-<tr>
-<th>Paramètre</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>userId</td>
-<td>Identifiant de l&#39;utilisateur dans la base Publik</td>
-</tr>
-<tr>
-<td>favoriteId</td>
-<td>Identifiant du favori</td>
-</tr>
-</tbody></table>
-<h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
-<table><thead>
-<tr>
-<th>Message</th>
-<th>Cause</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>not authorized</td>
-<td>L&#39;utilisateur accédant au endpoint n&#39;a pas les droits nécessaires à la réalisation de cette action</td>
-</tr>
-<tr>
-<td>favorite does not exist</td>
-<td>Le favori n&#39;existe pas</td>
-</tr>
-<tr>
-<td>favorite does not belong to user</td>
-<td>Le favori existe mais n&#39;appartient pas à l&#39;utilisateur passé en paramètre</td>
-</tr>
-<tr>
-<td>unknown error</td>
-<td>Erreur inconnue</td>
-</tr>
-</tbody></table>
-<h3 id='message-de-succes'>Message de succès</h3>
-<table><thead>
-<tr>
-<th>Message</th>
-<th>Cause</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>favorite deleted</td>
-<td>Favori supprimé</td>
 </tr>
 </tbody></table>
 <h1 id='categories'>Catégories</h1><h2 id='liste-des-territoires'>Liste des territoires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
