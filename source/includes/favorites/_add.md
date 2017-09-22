@@ -1,4 +1,4 @@
-## Ajout d'un favoris
+## Ajout d'un favori
 
 ```shell
 curl -X POST "https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorite"
@@ -24,17 +24,17 @@ curl -X POST "https://www.strasbourg.eu/api/jsonws/favorite.favorite/add-favorit
 }
 ```
 
-Ce endpoint permet de créer un nouveau favoris.
+Ce endpoint permet de créer un nouveau favori.
 
 ### Paramètres
 
 Paramètre | Description
 --------- | -----------
 userId | Identifiant de l'utilisateur dans la base Publik
-typeId | Type du favoris
-title | Titre du favoris
-url | URL cible du favoris
-entityId | Identifiant de l'entité mise en favoris - s'il ne s'agit pas d'une entité de Strasbourg.eu, passer la valeur 0 en paramètre
+typeId | Type du favori
+title | Titre du favori
+url | URL cible du favori
+entityId | Identifiant de l'entité mise en favori - s'il ne s'agit pas d'une entité de Strasbourg.eu, passer la valeur 0 en paramètre
 
 ### Messages d'erreurs
 
@@ -49,4 +49,4 @@ unknown error | Erreur inconnue
 
 Message | Cause
 --------|--------
-favorite added | Favoris ajouté
+favorite added | Favori ajouté
