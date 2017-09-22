@@ -30,11 +30,11 @@ Ce endpoint permet de créer un nouveau favoris.
 
 Paramètre | Description
 --------- | -----------
-USER_ID | Identifiant de l'utilisateur dans la base Publik
-TYPE_ID | Type du favoris
-TITLE | Titre du favoris
-URL | URL cible du favoris
-ENTITY_ID | Identifiant de l'entité mise en favoris - s'il ne s'agit pas d'une entité de Strasbourg.eu, passer la valeur 0 en paramètre
+userId | Identifiant de l'utilisateur dans la base Publik
+typeId | Type du favoris
+title | Titre du favoris
+url | URL cible du favoris
+entityId | Identifiant de l'entité mise en favoris - s'il ne s'agit pas d'une entité de Strasbourg.eu, passer la valeur 0 en paramètre
 
 ### Messages d'erreurs
 

@@ -38,6 +38,6 @@ Ce endpoint renvoie la liste des types de notifications auxquels l'utilisateur e
 
 Paramètre | Description
 --------- | -----------
-USER_ID | Identifiant de l'utilisateur dans la base Publik
+userId | Identifiant de l'utilisateur dans la base Publik
 
 

@@ -27,8 +27,8 @@ Ce endpoint permet de supprimer un favoris.
 
 Paramètre | Description
 --------- | -----------
-USER_ID | Identifiant de l'utilisateur dans la base Publik
-FAVORITE_ID | Identifiant du favoris
+userId | Identifiant de l'utilisateur dans la base Publik
+favoriteId | Identifiant du favoris
 
 ### Messages d'erreurs
 

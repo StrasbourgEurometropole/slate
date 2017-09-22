@@ -24,4 +24,4 @@ Ce endpoint renvoie la liste des identifiants des centres d'intérêt d'un utili
 
 Paramètre | Description
 --------- | -----------
-USER_ID | Identifiant de l'utilisateur dans la base Publik
+userId | Identifiant de l'utilisateur dans la base Publik

@@ -45,7 +45,7 @@ Le champ "entityTitle" n'est retourné que pour les types correspondant à une e
 
 Paramètre | Description
 --------- | -----------
-USER_ID | Identifiant de l'utilisateur dans la base Publik
+userId | Identifiant de l'utilisateur dans la base Publik
 
 ### Messages d'erreurs
 

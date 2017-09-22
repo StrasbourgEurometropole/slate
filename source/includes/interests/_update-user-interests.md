@@ -28,8 +28,8 @@ curl -X POST https://www.strasbourg.eu/api/jsonws/interest.interest/set-user-int
 
 Paramètre | Description
 --------- | -----------
-USER_ID | Identifiant de l'utilisateur dans la base Publik
-INTEREST_IDS | Liste de tous les centres d'intérêt à assigner à l'utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d'intérêts de l'utilisateur)
+userId | Identifiant de l'utilisateur dans la base Publik
+interestIds | Liste de tous les centres d'intérêt à assigner à l'utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d'intérêts de l'utilisateur)
 
 ### Messages d'erreurs
 

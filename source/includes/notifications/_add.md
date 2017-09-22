@@ -36,14 +36,14 @@ Ce endpoint permet d'envoyer une nouvelle notification.
 
 Paramètre | Description
 --------- | -----------
-IS_GLOBAL | "true" si la notification doit être envoyée à tous les utilisateurs abonnés au type, "false" si la notification s'applique à un utilisateur en particulier
-USER_ID | Identifiant de l'utilisateur dans la base Publik, doit être vide si IS_GLOBAL est "true"
-TYPE_ID | Type de la notification
-TITLE | Titre de la notification
-DESCRIPTION | Description de la notification
-URL | Si la notification correspond à une page en particulier, URL de cette page, sinon chaîne vide
-PUBLICATION_DATE | Date d'envoi de la notification (format yyyy-MM-ddThh-mm-ss)
-EXPIRATION_DATE | Date d'expiration de la notification, forcément ultérieure à la date de publication (format yyyy-MM-ddThh-mm-ss)
+isGlobal | "true" si la notification doit être envoyée à tous les utilisateurs abonnés au type, "false" si la notification s'applique à un utilisateur en particulier
+userId | Identifiant de l'utilisateur dans la base Publik, doit être vide si isGlobal est "true"
+typeId | Type de la notification
+title | Titre de la notification
+description | Description de la notification
+url | Si la notification correspond à une page en particulier, URL de cette page, sinon chaîne vide
+publicationDate | Date d'envoi de la notification (format yyyy-MM-ddThh-mm-ss)
+expirationDate | Date d'expiration de la notification, forcément ultérieure à la date de publication (format yyyy-MM-ddThh-mm-ss)
 
 ### Messages d'erreurs
 
