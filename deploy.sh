@@ -118,6 +118,7 @@ main() {
   fi
 
   restore_head
+  pause
 }
 
 initial_deploy() {

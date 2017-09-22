@@ -32,6 +32,12 @@ includes:
  - interests/get
  - interests/user-interests
  - interests/update-user-interests
+
+ - favorites/title
+ - favorites/types
+ - favorites/get
+ - favorites/add
+ - favorites/delete
  
  - notifications/title
  - notifications/types
@@ -40,12 +46,6 @@ includes:
  - notifications/set-settings
  - notifications/get
  - notifications/add
-
- - favorites/title
- - favorites/types
- - favorites/get
- - favorites/add
- - favorites/delete
 
  - categories/title
  - categories/territories
