@@ -14,11 +14,7 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/&lt;ID_TERRITORY&gt;/type-id/&lt;ID_TYPE&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
