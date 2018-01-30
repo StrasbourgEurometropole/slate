@@ -42,8 +42,8 @@ Ce endpoint permet de mettre à jour les réglages d'un utilisateur.
 Paramètre | Description
 --------- | -----------
 userId | Identifiant de l'utilisateur dans la base Publik
-typeIds | Liste de tous les types de notification à assigner à l'utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d'intérêts de l'utilisateur)
-channelIds | Liste de tous les canaux de notification à assigner à l'utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d'intérêts de l'utilisateur)
+typeIds | Liste de tous les types pour lesquels l'utilisateur ne souhaite pas recevoir de notifications, séparés par des virgules (chaîne vide pour supprimer tous les types)
+channelIds | Liste de tous les canaux de notification à assigner à l'utilisateur séparés par des virgules (chaîne vide pour supprimer tous les canaux)
 
 
 ### Messages d'erreurs

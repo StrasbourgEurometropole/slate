@@ -31,7 +31,7 @@ curl -X POST "https://www.strasbourg.eu/api/jsonws/notification.notification/get
 }
 ```
 
-Ce endpoint renvoie la liste des types de notifications auxquels l'utilisateur est abonné ainsi que la liste des canaux qu'il a choisi.
+Ce endpoint renvoie la liste des types de notifications pour lesquels l'utilisateur ne souhaite pas recevoir de notifications ainsi que la liste des canaux qu'il a choisi.
 
 
 ### Paramètres
