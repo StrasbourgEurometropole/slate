@@ -260,9 +260,6 @@
             <a href="#lieux" class="toc-h1 toc-link" data-title="Lieux">Lieux</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#tous-les-lieux" class="toc-h2 toc-link" data-title="Lieux">Tous les lieux</a>
-                  </li>
-                  <li>
                     <a href="#lieu-par-identifiant" class="toc-h2 toc-link" data-title="Lieux">Lieu par identifiant</a>
                   </li>
                   <li>
@@ -343,9 +340,6 @@
                     <a href="#liste-des-territoires" class="toc-h2 toc-link" data-title="Catégories">Liste des territoires</a>
                   </li>
                   <li>
-                    <a href="#liste-des-types-de-lieux" class="toc-h2 toc-link" data-title="Catégories">Liste des types de lieux</a>
-                  </li>
-                  <li>
                     <a href="#liste-des-services-gestionnaires" class="toc-h2 toc-link" data-title="Catégories">Liste des services gestionnaires</a>
                   </li>
               </ul>
@@ -382,87 +376,84 @@
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"event_1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Titre de l'événement"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event title"</span><span class="p">,</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sous-titre de l'événement"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event subtitle"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Description de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event description&lt;/p&gt;"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://URL_DE_L_ILLUSTRATION"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"timeDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"De 16 à 18h"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From 4 to 6pm"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"place"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lieu où l'événement à lieu"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event place name"</span><span class="p">,</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"event_1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Titre de l'événement"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event title"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sous-titre de l'événement"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event subtitle"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Description de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event description&lt;/p&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://URL_DE_L_ILLUSTRATION"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timeDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"De 16 à 18h"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"de_DE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From 4 to 6pm"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Numéro de la rue"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"streetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la rue"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code postal"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ville"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event access details&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"accessForDisabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement pour les personnes handicapées&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access details for disabled people&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"place"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lieu où l'événement à lieu"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event place name"</span><span class="p">,</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"freeEntry"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Tarifs de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event price&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Numéro de la rue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"streetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la rue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code postal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ville"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event access details&lt;/p&gt;"</span><span class="p">,</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"83504"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"themes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"126203"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"territories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"83503"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"83503"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"83504"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"126203"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"eventURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.strasbourg.eu/-/entity/id/000001"</span><span class="p">,</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000002"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
+      </span><span class="s2">"accessForDisabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Détails sur les accès au lieu de l'événement pour les personnes handicapées&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access details for disabled people&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"freeEntry"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Tarifs de l'événement&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en_US"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Event price&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"83504"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"themes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"126203"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"territories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"83503"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"83503"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"83504"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"126203"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"eventURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.strasbourg.eu/-/entity/id/000001"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000002"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie l&#39;ensemble des événements qui ont lieu dans l&#39;Eurométropole de Strasbourg.</p>
+<p>Ce endpoint renvoie l&#39;ensemble des événements qui ont lieu dans l&#39;Eurométropole de Strasbourg.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events</code></p>
 <h3 id='description-des-champs'>Description des champs</h3>
@@ -478,27 +469,25 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie un événement spécifique.</p>
+<p>Ce endpoint renvoie un événement spécifique.</p>
 <h2 id='liste-des-evenements-par-date'>Liste des événements par date</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/01102018"</span>
   -H <span class="s2">"Authorization: Basic KEY"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des événements qui se déroulent un jour donné.</p>
+<p>Ce endpoint renvoie la liste des événements qui se déroulent un jour donné.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-date/date/&lt;DATE&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
@@ -519,20 +508,18 @@
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des événements qui possèdent une catégorie donnée.</p>
+<p>Ce endpoint renvoie la liste des événements qui possèdent une catégorie donnée.</p>
 
 <aside class="notice">
   Les catégories peuvent être des types, des thèmes, des publics ou des territoires. 
@@ -552,32 +539,29 @@
 <td>Identifiant de la catégorie</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-evenements-par-lieu'>Liste des événements par lieu</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/125"</span>
+<h2 id='liste-des-evenements-par-lieu'>Liste des événements par lieu</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/place-sig-id/885_CUL_36"</span>
   -H <span class="s2">"Authorization: Basic KEY"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des événements qui se déroulent dans le lieu passé en paramètre.</p>
+<p>Ce endpoint renvoie la liste des événements qui se déroulent dans le lieu passé en paramètre.</p>
 
 <aside class="notice">
   Afin de connaître les différents lieux existant et de récupérer leurs identifiants, référez-vous à la documentation concernant les lieux.
 </aside>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/&lt;ID&gt;</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/place-sig-id/&lt;ID&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -596,20 +580,18 @@
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des événements qui possèdent une traduction dans la langue donnée.</p>
+<p>Ce endpoint renvoie la liste des événements qui possèdent une traduction dans la langue donnée.</p>
 
 <aside class="notice">
   Sur Strasbourg.eu, les événements peuvent être dispoonbiles en Français ("fr_FR"), anglais ("en_US") et/ou allemand ("de_DE").
@@ -660,11 +642,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des thèmes des événements.</p>
+<p>Ce endpoint renvoie la liste des thèmes des événements.</p>
 
 <aside class="notice">Un thème peut avoir un thème parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
 <h3 id='http-request'>HTTP Request</h3>
@@ -701,11 +679,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des types d&#39;événements.</p>
+<p>Ce endpoint renvoie la liste des types d&#39;événements.</p>
 
 <aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId". Une catégorie racine n'a pas de propriété "level", une catégorie ayant un parent possède un level de 1, deux parents 2, etc.</aside>
 <h3 id='http-request'>HTTP Request</h3>
@@ -733,162 +707,10 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des types de publics susceptibles d&#39;assister à un événement.</p>
+<p>Ce endpoint renvoie la liste des types de publics susceptibles d&#39;assister à un événement.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics</code></p>
-<h1 id='lieux'>Lieux</h1><h2 id='tous-les-lieux'>Tous les lieux</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places"</span>
-</code></pre>
-<blockquote>
-<p>La structure JSON renvoyée est la suivante :</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"idSurfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ID_SIG"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lieu"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Place name"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Description du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place description&lt;/p&gt;"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://strasbourg.eu/images/cathedrale-1.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image principale"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"imageURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://strasbourg.eu/images/cathedrale-2.png"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"imageCopyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copyright de l'image secondaire"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"serviceAndActivities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Services et activités du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place services and activities&lt;/p&gt;"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"characteristics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Caractéristiques du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place characteristics&lt;/p&gt;"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Tarifs du lieu&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Place price&lt;/p&gt;"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adresse complète"</span><span class="w">
-    </span><span class="s2">"distribution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Distribution"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rue"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"complement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Complément d'adresse"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code postal"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"districtCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code SIG du quartier"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cityCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code SIG de la ville"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ville"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pays"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"RGF93X"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée Y RGF93"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"RGF93Y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée X RGF93"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mercatorX"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée X mercator"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mercatorY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordonnée Y mercator"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"TYPE_1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"TYPE_2"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"mail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact@place.eu"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0101010101"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"facebookName"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la page Facebook"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook page name"</span><span class="p">,</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"facebookURL"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL de la page Facebook"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook page URL"</span><span class="p">,</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"websiteName"</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du site internet"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website name"</span><span class="p">,</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"websiteURL"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL du site internet"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website URL"</span><span class="p">,</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Accès&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access&lt;/p&gt;"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"accessForDisabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Accès handicapé&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Access for disabled people&lt;/p&gt;"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"accessForBlind"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accessForWheelchair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accessForDeaf"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accessForElder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accessForDeficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"periodName"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom de la période"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period name"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"scheduleLinkName"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nom du lien vers le détail des horaires pour la période"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Period schedule detail link name"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"scheduleLinkURL"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lien vers le détail des horaires pour la période"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schedule detail link"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"alwaysOpen"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"schedules"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-         </span><span class="s2">"dayOfWeek"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">à</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"startHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"endHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="p">,</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-      </span><span class="p">}]</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"exceptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description de l'exception"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exception description"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"closed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"startHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"endHour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hh:mm"</span><span class="w">
-    </span><span class="p">}],</span><span class="w">
-    </span><span class="s2">"exceptionalSchedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Programme exceptionnel"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exceptionnal schedule"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"additionalInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informations complémentaires"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional information"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://youtube.com/AaaAaA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"https://youtube.com/bbBBBb"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"https://strasbourg.eu/documents/programme.pdf"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"friendlyURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.strasbourg.eu/-/entity/id/000001"</span><span class="p">,</span><span class="w">
-  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000002"</span><span class="p">,</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie l&#39;ensemble des lieux de l&#39;Eurométropole de Strasbourg.</p>
-<h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places</code></p>
-<h3 id='description-des-champs'>Description des champs</h3>
-<p><em>TODO</em></p>
-<h2 id='lieu-par-identifiant'>Lieu par identifiant</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id/id/&lt;ID&gt;"</span>
+<h1 id='lieux'>Lieux</h1><h2 id='lieu-par-identifiant'>Lieu par identifiant</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id/id/&lt;ID&gt;"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
@@ -898,11 +720,7 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie le lieu correspondant à l&#39;identifiant SIG passé en paramètre.</p>
+<p>Ce endpoint renvoie le lieu correspondant à l&#39;identifiant SIG passé en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id/id/&lt;ID&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
@@ -927,11 +745,7 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie le lieu correspondant à l&#39;identifiant SIG passé en paramètre.</p>
+<p>Ce endpoint renvoie le lieu correspondant à l&#39;identifiant SIG passé en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-id-sig/sig-id/&lt;ID_SIG&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
@@ -946,7 +760,7 @@
 <td>Identifiant SIG du lieu</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-lieux-par-type'>Liste des lieux par type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-type/type-id/Cat_06_05"</span>
+<h2 id='liste-des-lieux-par-type'>Liste des lieux par type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/Cat_06_05"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
@@ -962,13 +776,9 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du type de lieu passé en paramètre.</p>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du type de lieu passé en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-type/type-id/&lt;ID_TYPE&gt;</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/&lt;ID_TYPE&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -997,11 +807,7 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire passé en paramètre.</p>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire passé en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory/territory-id/&lt;ID_TERRITORY&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
@@ -1032,11 +838,7 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
+<p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/&lt;ID_TERRITORY&gt;/type-id/&lt;ID_TYPE&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
@@ -1071,13 +873,9 @@
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des lieux ayant un nom contenant la chaîne de caractère passée en paramètre.</p>
+<p>Ce endpoint renvoie la liste des lieux ayant un nom contenant la chaîne de caractère passée en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-name-and-language/keyword/&lt;KEYWORD&gt;/language/fr_FR</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-name-and-language/keyword/&lt;KEYWORD&gt;/language/fr_FR</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1122,7 +920,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste de tous les centres d&#39;intérêts publiés.</p>
+<p>Ce endpoint renvoie la liste de tous les centres d&#39;intérêts publiés.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/interest.interest/get-interests</code></p>
 <h2 id='liste-des-centres-d-39-interet-d-39-un-utilisateur'>Liste des centres d&#39;intérêt d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/interest.interest/get-user-interests"</span>  
@@ -1139,7 +937,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des identifiants des centres d&#39;intérêt d&#39;un utilisateur.</p>
+<p>Ce endpoint renvoie la liste des identifiants des centres d&#39;intérêt d&#39;un utilisateur.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1248,7 +1046,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des types de favoris.</p>
+<p>Ce endpoint renvoie la liste des types de favoris.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-types</code></p>
 <h2 id='liste-des-favoris-d-39-un-utilisateur'>Liste des favoris d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/favorite.favorite/get-user-favorites"</span>
@@ -1282,7 +1080,7 @@
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint permet de récupérer la liste des favoris d&#39;un utilisateur.</p>
+<p>Ce endpoint permet de récupérer la liste des favoris d&#39;un utilisateur.</p>
 
 <p>Le champ &quot;entityTitle&quot; n&#39;est retourné que pour les types correspondant à une entité de Strasbourg.eu (actuellement tout sauf les procédures).</p>
 <h3 id='parametres'>Paramètres</h3>
@@ -1327,7 +1125,7 @@
     </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint permet de créer un nouveau favori.</p>
+<p>Ce endpoint permet de créer un nouveau favori.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1415,7 +1213,7 @@
     </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint permet de supprimer un favori.</p>
+<p>Ce endpoint permet de supprimer un favori.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1491,7 +1289,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des types de notification.</p>
+<p>Ce endpoint renvoie la liste des types de notification.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/notification.notification/get-types</code></p>
 <h2 id='liste-des-canaux-de-diffusion-de-notification'>Liste des canaux de diffusion de notification</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-channels"</span>
@@ -1513,7 +1311,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des canaux de notification proposés aux utilisateurs.</p>
+<p>Ce endpoint renvoie la liste des canaux de notification proposés aux utilisateurs.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/notification.notification/get-channels</code></p>
 <h2 id='recuperation-des-parametres-de-notification-d-39-un-utilisateur'>Récupération des paramètres de notification d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/get-user-settings"</span>
@@ -1544,7 +1342,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint renvoie la liste des types de notifications auxquels l&#39;utilisateur est abonné ainsi que la liste des canaux qu&#39;il a choisi.</p>
+<p>Ce endpoint renvoie la liste des types de notifications pour lesquels l&#39;utilisateur ne souhaite pas recevoir de notifications ainsi que la liste des canaux qu&#39;il a choisi.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1588,7 +1386,7 @@
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint permet de mettre à jour les réglages d&#39;un utilisateur.</p>
+<p>Ce endpoint permet de mettre à jour les réglages d&#39;un utilisateur.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1602,11 +1400,11 @@
 </tr>
 <tr>
 <td>typeIds</td>
-<td>Liste de tous les types de notification à assigner à l&#39;utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d&#39;intérêts de l&#39;utilisateur)</td>
+<td>Liste de tous les types pour lesquels l&#39;utilisateur ne souhaite pas recevoir de notifications, séparés par des virgules (chaîne vide pour supprimer tous les types)</td>
 </tr>
 <tr>
 <td>channelIds</td>
-<td>Liste de tous les canaux de notification à assigner à l&#39;utilisateur séparés par des virgules (chaîne vide pour supprimer tous les centres d&#39;intérêts de l&#39;utilisateur)</td>
+<td>Liste de tous les canaux de notification à assigner à l&#39;utilisateur séparés par des virgules (chaîne vide pour supprimer tous les canaux)</td>
 </tr>
 </tbody></table>
 <h3 id='messages-d-39-erreurs'>Messages d&#39;erreurs</h3>
@@ -1671,7 +1469,7 @@
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint permet de récupérer la liste des notifications d&#39;un utilisateurs.</p>
+<p>Ce endpoint permet de récupérer la liste des notifications d&#39;un utilisateurs.</p>
 <h2 id='ajout-d-39-une-notification'>Ajout d&#39;une notification</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/notification.notification/add-notification"</span>
   -F <span class="s2">"isGlobal=IS_GLOBAL"</span>
   -F <span class="s2">"userId=USER_ID"</span>
@@ -1693,7 +1491,7 @@
     </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MESSAGE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cet endpoint permet d&#39;envoyer une nouvelle notification.</p>
+<p>Ce endpoint permet d&#39;envoyer une nouvelle notification.</p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -1835,61 +1633,11 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des territoires pouvant être référencés par d&#39;autres entités, comme les événements où les lieux.</p>
+<p>Ce endpoint renvoie la liste des territoires pouvant être référencés par d&#39;autres entités, comme les événements où les lieux.</p>
 
 <aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories</code></p>
-<h2 id='liste-des-types-de-lieux'>Liste des types de lieux</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-types
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
-<blockquote>
-<p>La structure JSON renvoyée est la suivante :</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Petite Enfance"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat_01"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat_04"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accueil de jour"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat_04_01"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat_04"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"fr_FR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accueils de loisirs maternels"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat_01_06"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat_01"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des types de lieux.</p>
-
-<aside class="notice">Un type de lieu peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId".</aside>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-types</code></p>
 <h2 id='liste-des-services-gestionnaires'>Liste des services gestionnaires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
   -H "</span>Authorization: Basic KEY<span class="s2">"
 </span></code></pre>
@@ -1911,11 +1659,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<aside class="success">
-  Cet endpoint est public.
-</aside>
-
-<p>Cet endpoint renvoie la liste des services gestionnaires des événements.</p>
+<p>Ce endpoint renvoie la liste des services gestionnaires des événements.</p>
 
 <aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
 <h3 id='http-request'>HTTP Request</h3>
