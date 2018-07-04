@@ -1,7 +1,7 @@
 ## Liste des événements par lieu
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/125"
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/place-sig-id/885_CUL_36"
   -H "Authorization: Basic KEY"
 ```
 
@@ -27,7 +27,7 @@ Ce endpoint renvoie la liste des événements qui se déroulent dans le lieu pas
 
 ### Requête HTTP
 
-`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/placeSIGId/<ID>`
+`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-place/place-sig-id/<ID>`
 
 ### Paramètres
 
