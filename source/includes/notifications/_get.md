@@ -19,8 +19,8 @@ curl -X POST "https://www.strasbourg.eu/api/jsonws/notification.notification/get
             "type": "Type de notification 1",
             "typeId": "TYPE_1",
             "isRead": false,
-            "publicationDate": "Mon Sep 11 13:12:00 GMT 2017",
-            "expirationDate": "Mon Sep 11 13:12:00 GMT 2017"
+            "publicationDate": "2018-01-01 12:00:00",
+            "expirationDate": "2019-01-01 12:00:00"
         },
         {
             "id": "279801",
@@ -30,8 +30,8 @@ curl -X POST "https://www.strasbourg.eu/api/jsonws/notification.notification/get
             "type": "Type de notification 1",
             "typeId": "TYPE_1",
             "isRead": true,
-            "publicationDate": "Mon Dec 03 10:15:30 GMT 2007",
-            "expirationDate": "Fri Dec 03 10:15:30 GMT 2027"
+            "publicationDate": "2018-06-01 12:00:00",
+            "expirationDate": "2019-06-01 12:00:00"
         }
     ]
 }
