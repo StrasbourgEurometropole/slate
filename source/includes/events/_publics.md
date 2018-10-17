@@ -1,7 +1,7 @@
 ## Liste des publics
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics"
   -H "Authorization: Basic KEY"
 ```
 

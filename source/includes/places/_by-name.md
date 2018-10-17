@@ -23,10 +23,10 @@ Ce endpoint renvoie la liste des lieux ayant un nom contenant la chaîne de cara
 
 ### Requête HTTP
 
-`GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-name-and-language/keyword/<KEYWORD>/language/fr_FR`
+`GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-name-and-language/name/<NAME>/language/fr_FR`
 
 ### Paramètres
 
 Paramètre | Description
 --------- | -----------
-KEYWORD | Mot-clé de recherche
+NAME | Mot-clé de recherche

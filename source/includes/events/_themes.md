@@ -1,7 +1,7 @@
 ## Liste des thèmes des événements
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes"
   -H "Authorization: Basic KEY"
 ```
 

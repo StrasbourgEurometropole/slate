@@ -1,7 +1,7 @@
 ## Mise à jour des centres d'intérêt d'un utilisateur
 
 ```shell
-curl -X POST https://www.strasbourg.eu/api/jsonws/interest.interest/set-user-interests"
+curl -X POST "https://www.strasbourg.eu/api/jsonws/interest.interest/set-user-interests"
   -F "userId=USERID"
   -F "interestIds=INTEREST_IDS"
   -H "Authorization: Basic KEY"

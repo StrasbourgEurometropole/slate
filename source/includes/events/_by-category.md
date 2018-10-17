@@ -1,7 +1,7 @@
 ## Liste des événements par catégorie
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/125"
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/category-id/125"
   -H "Authorization: Basic KEY"
 ```
 
@@ -29,7 +29,7 @@ Ce endpoint renvoie la liste des événements qui possèdent une catégorie donn
 
 ### Requête HTTP
 
-`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/<ID>`
+`GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/category-id/<ID>`
 
 ### Paramètres
 

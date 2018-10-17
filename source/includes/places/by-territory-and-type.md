@@ -1,7 +1,7 @@
 ## Liste des lieux par territoire et type
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/P_FR/type-id/<ID_TYPE>"
+curl "https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-territory-and-type/territory-id/P_FR/type-id/<ID_TYPE>"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -23,7 +23,7 @@ Ce endpoint renvoie la liste des lieux correspondant à l'identifiant SIG du ter
 
 ### Requête HTTP
 
-`GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/<ID_TERRITORY>/type-id/<ID_TYPE>`
+`GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-territory-and-type/territory-id/<ID_TERRITORY>/type-id/<ID_TYPE>`
 
 ### Paramètres
 

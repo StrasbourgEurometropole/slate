@@ -1,7 +1,7 @@
 ## Liste des territoires
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories"
   -H "Authorization: Basic KEY"
 ```
 

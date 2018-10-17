@@ -1,7 +1,7 @@
 ## Liste des lieux par type
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/Cat_06_05"
+curl "https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-type/type-id/Cat_06_05"
 ```
 
 > La structure JSON renvoyée est la suivante :
@@ -23,7 +23,7 @@ Ce endpoint renvoie la liste des lieux correspondant à l'identifiant SIG du typ
 
 ### Requête HTTP
 
-`GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/<ID_TYPE>`
+`GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-type/type-id/<ID_TYPE>`
 
 ### Paramètres
 

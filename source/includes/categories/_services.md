@@ -1,7 +1,7 @@
 ## Liste des services gestionnaires
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-services"
   -H "Authorization: Basic KEY"
 ```
 

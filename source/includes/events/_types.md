@@ -1,7 +1,7 @@
 ## Liste des types d'événements
 
 ```shell
-curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-types
+curl "https://www.strasbourg.eu/api/jsonws/agenda.event/get-types"
   -H "Authorization: Basic KEY"
 ```
 
