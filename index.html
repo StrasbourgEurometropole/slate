@@ -502,7 +502,7 @@
 <td>Date au format ddMMyyyy (exemple : 1er octobre 2018 devient 01102018)</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-evenements-par-categorie'>Liste des événements par catégorie</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/125"</span>
+<h2 id='liste-des-evenements-par-categorie'>Liste des événements par catégorie</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/category-id/125"</span>
   -H <span class="s2">"Authorization: Basic KEY"</span>
 </code></pre>
 <blockquote>
@@ -526,7 +526,7 @@
   Référez-vous à la documentation concernant les catégories pour savoir comment connaître ces différentes catégories et leurs identifiants.
 </aside>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/categoryId/&lt;ID&gt;</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-events-by-category/category-id/&lt;ID&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -610,9 +610,9 @@
 <td>Langue : &quot;fr_FR&quot; pour le français, &quot;en_US&quot; pour l&#39;anglais, &quot;de_DE&quot; pour l&#39;allemand</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-themes-des-evenements'>Liste des thèmes des événements</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
+<h2 id='liste-des-themes-des-evenements'>Liste des thèmes des événements</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
@@ -647,9 +647,9 @@
 <aside class="notice">Un thème peut avoir un thème parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-themes</code></p>
-<h2 id='liste-des-types-d-39-evenements'>Liste des types d&#39;événements</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-types
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
+<h2 id='liste-des-types-d-39-evenements'>Liste des types d&#39;événements</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-types"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
@@ -684,9 +684,9 @@
 <aside class="notice">Un type peut avoir un type parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId". Une catégorie racine n'a pas de propriété "level", une catégorie ayant un parent possède un level de 1, deux parents 2, etc.</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-types</code></p>
-<h2 id='liste-des-publics'>Liste des publics</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
+<h2 id='liste-des-publics'>Liste des publics</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-publics"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
@@ -760,7 +760,7 @@
 <td>Identifiant SIG du lieu</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-lieux-par-type'>Liste des lieux par type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/Cat_06_05"</span>
+<h2 id='liste-des-lieux-par-type'>Liste des lieux par type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-type/type-id/Cat_06_05"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
@@ -778,7 +778,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du type de lieu passé en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-type/type-id/&lt;ID_TYPE&gt;</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-type/type-id/&lt;ID_TYPE&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -791,7 +791,7 @@
 <td>Identifiant SIG du type de lieu</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-lieux-par-territoire'>Liste des lieux par territoire</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory/territory-id/P_FR"</span>
+<h2 id='liste-des-lieux-par-territoire'>Liste des lieux par territoire</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-territory/territory-id/P_FR"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
@@ -809,7 +809,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire passé en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory/territory-id/&lt;ID_TERRITORY&gt;</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-territory/territory-id/&lt;ID_TERRITORY&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -822,7 +822,7 @@
 <td>Identifiant SIG du territoire</td>
 </tr>
 </tbody></table>
-<h2 id='liste-des-lieux-par-territoire-et-type'>Liste des lieux par territoire et type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/P_FR/type-id/&lt;ID_TYPE&gt;"</span>
+<h2 id='liste-des-lieux-par-territoire-et-type'>Liste des lieux par territoire et type</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-territory-and-type/territory-id/P_FR/type-id/&lt;ID_TYPE&gt;"</span>
 </code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
@@ -840,7 +840,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des lieux correspondant à l&#39;identifiant SIG du territoire et à l&#39;identifiant SIG du type de lieu passés en paramètres.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-territory-and-type/territory-id/&lt;ID_TERRITORY&gt;/type-id/&lt;ID_TYPE&gt;</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-territory-and-type/territory-id/&lt;ID_TERRITORY&gt;/type-id/&lt;ID_TYPE&gt;</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -875,7 +875,7 @@
 </span></code></pre>
 <p>Ce endpoint renvoie la liste des lieux ayant un nom contenant la chaîne de caractère passée en paramètre.</p>
 <h3 id='requete-http'>Requête HTTP</h3>
-<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-place-by-name-and-language/keyword/&lt;KEYWORD&gt;/language/fr_FR</code></p>
+<p><code>GET https://www.strasbourg.eu/api/jsonws/place.place/get-places-by-name-and-language/name/&lt;NAME&gt;/language/fr_FR</code></p>
 <h3 id='parametres'>Paramètres</h3>
 <table><thead>
 <tr>
@@ -884,7 +884,7 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>KEYWORD</td>
+<td>NAME</td>
 <td>Mot-clé de recherche</td>
 </tr>
 </tbody></table>
@@ -950,11 +950,11 @@
 <td>Identifiant de l&#39;utilisateur dans la base Publik</td>
 </tr>
 </tbody></table>
-<h2 id='mise-a-jour-des-centres-d-39-interet-d-39-un-utilisateur'>Mise à jour des centres d&#39;intérêt d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST https://www.strasbourg.eu/api/jsonws/interest.interest/set-user-interests<span class="s2">"
-  -F "</span><span class="nv">userId</span><span class="o">=</span>USERID<span class="s2">"
-  -F "</span><span class="nv">interestIds</span><span class="o">=</span>INTEREST_IDS<span class="s2">"
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
+<h2 id='mise-a-jour-des-centres-d-39-interet-d-39-un-utilisateur'>Mise à jour des centres d&#39;intérêt d&#39;un utilisateur</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://www.strasbourg.eu/api/jsonws/interest.interest/set-user-interests"</span>
+  -F <span class="s2">"userId=USERID"</span>
+  -F <span class="s2">"interestIds=INTEREST_IDS"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
 <blockquote>
 <p>La réponse est un des deux objet suivant :</p>
 </blockquote>
@@ -1592,9 +1592,9 @@
 <td>Notification envoyée</td>
 </tr>
 </tbody></table>
-<h1 id='categories'>Catégories</h1><h2 id='liste-des-territoires'>Liste des territoires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
+<h1 id='categories'>Catégories</h1><h2 id='liste-des-territoires'>Liste des territoires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante :</p>
 </blockquote>
@@ -1638,9 +1638,9 @@
 <aside class="notice">Un territoire peut avoir un territoire parent. La profondeur de la catégorie dans l'arbre global est indiqué par la propriété "level" et l'identifiant de la catégorie parente par "parentId"</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.strasbourg.eu/api/jsonws/agenda.event/get-territories</code></p>
-<h2 id='liste-des-services-gestionnaires'>Liste des services gestionnaires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-services
-  -H "</span>Authorization: Basic KEY<span class="s2">"
-</span></code></pre>
+<h2 id='liste-des-services-gestionnaires'>Liste des services gestionnaires</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.strasbourg.eu/api/jsonws/agenda.event/get-services"</span>
+  -H <span class="s2">"Authorization: Basic KEY"</span>
+</code></pre>
 <blockquote>
 <p>La structure JSON renvoyée est la suivante</p>
 </blockquote>
